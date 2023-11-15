@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Barra lateral</title>
-    <link rel="stylesheet" href="src/resources/css/nav.css">
+    <link rel="stylesheet" href="src/css/nav.css">
 </head>
 
 <body>
