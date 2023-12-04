@@ -1,7 +1,7 @@
 <?php
 
 class CConexion {
-    public static function ConexionBD() {
+    public function ConexionBD() {
         $host = "localhost";
         $dbname = "CRETA";
         $username = "postgres";
@@ -9,7 +9,6 @@ class CConexion {
     
         try {
             $conn = new PDO("pgsql:host=$host;dbname=$dbname;", $username, $password);
-            echo "conecto";
         } catch (PDOException $exp) {
             echo "no conecto $exp";
         }
