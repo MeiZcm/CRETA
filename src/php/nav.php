@@ -3,25 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Barra lateral</title>
-    <link rel="stylesheet" href="src/css/nav.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src\css\nav.css">
 </head>
 
 <body>
     <nav>
+        <label class="logo">DesignX</label>
         <ul>
-            <li class="active"><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a class="active" href="index.php">Home</a></li>
+            <li><a href="../users/lista.php">lista</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
         </ul>
     </nav>
-    <aside>
-        <ul>
-            <li><a href="#">Materias</a></li>
-            <li><a href="#">Mis cursos</a></li>
-            <li><a href="#">Mi perfil</a></li>
-        </ul>
-    </aside>
+
+    <?php
+include"../users/session.php"
+?>
 </body>
 
 </html>

@@ -7,14 +7,14 @@
 </head>
 
 <body>
+
+
     <?php
         include(realpath('src/php/nav.php'));
+        include(realpath('src/php/sidebar.php'));
 
     ?>
 
-    <h1>Dashboard</h1>
-
-    <p>Este es el dashboard del usuario.</p>
 </body>
 
 </html>

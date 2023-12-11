@@ -51,3 +51,8 @@ body {
     text-decoration: underline;
   }
   
+  .error-message {
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 10px;
+}
