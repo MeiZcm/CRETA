@@ -12,7 +12,6 @@ $sqlUsuario = "SELECT
             U.primerapellido,
             U.segundoapellido,
             U.direccion,
-            U.contraseña,
             U.fecharegistro,
             R.rol,
             TD.tipodocumento
@@ -33,6 +32,11 @@ $resultsUsuario = $queryUsuario->fetchAll(PDO::FETCH_OBJ);
     <title>Usuarios</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/colreorder/1.5.4/js/dataTables.colReorder.min.js">
+    </script>
 </head>
 
 <body>
@@ -43,15 +47,15 @@ $resultsUsuario = $queryUsuario->fetchAll(PDO::FETCH_OBJ);
             <?php
             if ($queryUsuario->rowCount() > 0) {
                 echo '<table id="t-usuarios" class="display nowrap" style="width: 80%" border="1"> <thead>';
-                echo '<th>Num. Identidad</th>';
-                echo '<th>Primer Nombre</th>';
-                echo '<th>Segundo Nombre</th>';
-                echo '<th>Primer Apellido</th>';
-                echo '<th>Segundo Apellido</th>';
-                echo '<th>Dirección</th>';
-                echo '<th>Fecha Registro</th>';
-                echo '<th>Rol</th>';
-                echo '<th>Tipo Documento</th>';
+                echo '<th data-searchable="true">Num. Identidad</th>';
+                echo '<th data-searchable="true">Primer Nombre</th>';
+                echo '<th data-searchable="true">Segundo Nombre</th>';
+                echo '<th data-searchable="true">Primer Apellido</th>';
+                echo '<th data-searchable="true">Segundo Apellido</th>';
+                echo '<th data-searchable="true">Dirección</th>';
+                echo '<th data-searchable="true">Fecha Registro</th>';
+                echo '<th data-searchable="true">Rol</th>';
+                echo '<th data-searchable="true">Tipo Documento</th>';
                 echo '<th>Acciones</th>'; // Nueva columna para acciones
                 echo '</thead><tbody>';
 
@@ -73,9 +77,11 @@ $resultsUsuario = $queryUsuario->fetchAll(PDO::FETCH_OBJ);
                         </tr>';
                 }
 
-echo '</tbody></table>';
+                echo '</tbody></table>';
             }
+            
             ?>
+
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
             <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
             <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js">
@@ -92,11 +98,12 @@ echo '</tbody></table>';
             </script>
             <script>
             $(document).ready(function() {
-                $('#t-usuarios').DataTable({
+                var table = $('#t-usuarios').DataTable({
                     dom: 'Bfrtip',
-                    buttons: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+                    colReorder: true, // Habilita la extensión ColReorder
+                    stateSave: true, // Guarda el estado actual de la tabla
+                    stateDuration: -1, // Permite que el estado guardado sea permanente
                 });
             });
             </script>
