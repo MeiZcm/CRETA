@@ -13,7 +13,7 @@
 
 <body>
     <nav>
-        <label class="logo">DesignX</label>
+        <label class="logo">CRETA</label>
         <ul>
             <li><a class="active" href="/CRETA/pagina2.php">Home</a></li>
             <li><a href="users/lista.php">lista</a></li>

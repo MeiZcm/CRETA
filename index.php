@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario de inicio de sesión</title>
-    <link rel="stylesheet" href="src/css/login.css">
+    <link rel="stylesheet" href="src/css/login.css?v=1">
     <script src="src/js/validaciones.js" type="text/javascript"></script>
 </head>
 

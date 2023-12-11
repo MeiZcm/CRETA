@@ -29,13 +29,13 @@ body {
   
   input, select {
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid blue;
     padding: 10px;
     margin-bottom: 10px;
   }
   
   input[type="submit"] {
-    background-color: #000000;
+    background-color: blue;
     color: #ffffff;
     padding: 10px 20px;
     border: none;
