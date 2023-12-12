@@ -15,9 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST["contrasena"];
     $rol = $_POST["rol"];
 
-    // Insertar el nuevo usuario en la base de datos
-    $sql = "INSERT INTO public.usuario (fk_tipodocumento, numidentidad, primernombre, segundonombre, primerapellido, segundoapellido, direccion, contraseña, fk_rol)
-            VALUES (:tipoDocumento, :numIdentidad, :primerNombre, :segundoNombre, :primerApellido, :segundoApellido, :direccion, :contrasena, :rol)";
+    // Llamar al procedimiento almacenado
+    $sql = "SELECT insertar_usuario_y_alumno(:primerNombre, :segundoNombre, :primerApellido, :segundoApellido, 
+                                           :tipoDocumento, :numIdentidad, :direccion, :contrasena, :rol)";
     
     // Verificar si la conexión es válida antes de preparar la consulta
     if ($conn) {
@@ -43,4 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error de conexión a la base de datos.";
     }
 }
+
 ?>
